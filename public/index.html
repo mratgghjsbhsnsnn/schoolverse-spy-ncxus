@@ -1,1 +1,45 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#00AF50">
+  <title>SchoolVerse</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <section id="auth-view" class="auth-view">
+      <div class="auth-card">
+        <div class="brand"><span class="brand-mark">S</span><div><strong>SchoolVerse</strong><small>SPY Ncxus</small></div></div>
+        <div class="auth-tabs"><button class="tab active" data-auth="login">เข้าสู่ระบบ</button><button class="tab" data-auth="register">สมัครสมาชิก</button></div>
+        <form id="login-form" class="form-card">
+          <label>Email<input name="email" type="email" autocomplete="username" required></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+          <button class="primary full" type="submit">เข้าสู่ระบบ</button>
+        </form>
+        <form id="register-form" class="form-card hidden">
+          <div class="grid-2"><label>ชื่อ<input name="firstName" required></label><label>นามสกุล<input name="lastName" required></label></div>
+          <label>Email<input name="email" type="email" required></label>
+          <label>Password<input name="password" type="password" minlength="8" required></label>
+          <label>Role<select name="role"><option value="student">นักเรียน</option><option value="teacher">ครู</option><option value="parent">ผู้ปกครอง</option></select></label>
+          <div class="grid-2"><label>ห้องเรียน (ถ้ามี)<input name="classID"></label><label>ระดับชั้น<input name="gradeLevel"></label></div>
+          <button class="primary full" type="submit">ส่งคำขอสมัครสมาชิก</button>
+          <p class="muted">บัญชีใหม่จะอยู่สถานะรออนุมัติจากผู้ดูแลระบบ</p>
+        </form>
+      </div>
+    </section>
 
+    <section id="main-view" class="main-view hidden">
+      <header class="topbar">
+        <div class="topbar-left"><span class="brand-mark mini">S</span><span id="page-title">Dashboard</span></div>
+        <div class="topbar-actions"><button id="refresh-btn" class="icon-btn" title="Refresh">↻</button><button id="noti-btn" class="icon-btn" title="Notifications">●<span id="noti-count" class="badge-count hidden">0</span></button></div>
+      </header>
+      <main id="content" class="content"></main>
+      <nav id="bottom-nav" class="bottom-nav"></nav>
+    </section>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
