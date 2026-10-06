@@ -1,0 +1,4 @@
+# Do not commit real secrets.
+BOOTSTRAP_KEY=change-this-to-a-long-random-secret
+SESSION_PEPPER=change-this-to-another-long-random-secret
+EMAIL_PROVIDER_TOKEN=
